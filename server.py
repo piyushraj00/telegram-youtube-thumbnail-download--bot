@@ -20,18 +20,18 @@ def valid_url(e):
 def make_reply(msg,chat_id):
 
     if msg is not None:
-        if msg == '/start' or msg == '/help':
-            bot.send_message('Welcome to Youtube Thumbnail Download bot . Send a youtube video url ',chat_id)
+        if msg == '/start' or msg == '/download':
+            bot.send_message('Welcome to Youtube Thumbnail Downloader bot . Send a youtube video url To Download Thumbnail',chat_id)
         elif msg == '/contact':
-            bot.send_message("Send your query to @Contact_mg_bot",chat_id)
+            bot.send_message("Send your query to @PIYUSH_raj007",chat_id)
         elif msg == '/web':
-            bot.send_message("visit : https//:mastergeniusweb.000webhostapp.com/",chat_id)
+            bot.send_message("Our Telegram Channel : https://t.me/YoutubeThumbnailDownload",chat_id)
         else:
             if valid_url(msg) is not None:
                     thumbnailurl= valid_url(msg)
                     bot.sendImageRemoteFile(chat_id,thumbnailurl)
             else:
-                bot.send_message('Please Enter a valid youtube video url',chat_id)
+                bot.send_message('✏️Please Enter a valid youtube video url',chat_id)
 
 update_id = None
 while True:
